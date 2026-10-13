@@ -1,0 +1,74 @@
+/* ej.AI.minds Design für Pi Desk · Variante A „Navy dunkel“
+   Navy #0c3b64 · Mint #8be6d8 · Lime #e0fd2c · Soft Pink #ffa5da
+   Quicksand 700 für Titel, Roboto für Text.
+   Wird nach app.css und features.css geladen und überschreibt nur Farben und Schriften. */
+
+@font-face{font-family:"Quicksand";font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/quicksand-700.woff2) format("woff2")}
+@font-face{font-family:"Roboto";font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/roboto-400.woff2) format("woff2")}
+@font-face{font-family:"Roboto";font-weight:500 700;font-style:normal;font-display:swap;src:url(/fonts/roboto-500.woff2) format("woff2")}
+
+:root{
+  --navy:#0c3b64;--navy-deep:#082c4b;--navy-raised:#124a7a;
+  --mint:#8be6d8;--lime:#e0fd2c;--pink-soft:#ffa5da;
+  --bg:var(--navy);--side:var(--navy-deep);--fg:#ffffff;--muted:#a9c3d6;
+  --line:#8be6d81f;--hover:#ffffff0f;--selected:#ffffff17;
+  --green:var(--mint);--red:var(--pink-soft);
+  --font:"Roboto","Segoe UI",Arial,sans-serif;
+  --font-head:"Quicksand","Segoe UI",Arial,sans-serif
+}
+
+/* Titel in Quicksand */
+h1,h2,h3,.brand,.menu-title,.popover .menu-title,.settings-content h2,.settings-content h3{font-family:var(--font-head);font-weight:700}
+
+/* Markenschriftzug oben links */
+.brand{color:#fff;letter-spacing:0}
+.brand svg{display:none}
+.brand .ej-dots{color:var(--lime)}
+
+/* Flächen */
+.sidebar{background:var(--navy-deep)}
+.topbar{background:none}
+.topbar:after{background:linear-gradient(90deg,transparent,#8be6d833,transparent)}
+.task.active{background:#ffffff17;box-shadow:inset 3px 0 0 var(--lime)}
+.search-panel,.connect-dialog{background:var(--navy-deep);border-color:#8be6d833}
+.toast{background:var(--navy-raised)}
+[data-tip]:hover:after{background:var(--navy-deep);border:1px solid #8be6d833}
+#feature-error{background:var(--navy-deep);color:var(--pink-soft)}
+.markdown-code,.image-chip button{background:var(--navy-deep)}
+.settings-content input:not([type=checkbox]),.settings-content textarea,.feature-content>input,.settings-page>select,.row-actions select{background:var(--navy-deep);border-color:#8be6d833}
+
+/* Nachrichten */
+.message.user p{background:var(--navy-raised);color:#fff;box-shadow:none}
+
+/* Eingabefeld */
+.composer:before{background:linear-gradient(90deg,transparent 4%,#8be6d866 50%,transparent 92%)}
+.composer:after{background:linear-gradient(90deg,transparent 15%,var(--mint) 50%,transparent 85%)}
+.composer textarea::placeholder{color:#a9c3d6}
+.model,.context-trigger,.access-trigger{color:#cfe0eb}
+.context-chip{background:#8be6d81a;color:var(--mint)}
+.context-chip button{color:var(--mint)}
+
+/* Senden und Hauptknopf in Lime */
+.send{background:var(--lime);color:var(--navy)}
+.send:not(:disabled):hover{background:#ecff7a;color:var(--navy)}
+.primary{background:var(--lime);color:var(--navy)}
+.primary:hover:not(:disabled){background:#ecff7a}
+
+/* Status, Auswahl, Schalter in Mint */
+.busy-indicator{background:var(--mint)}
+.pending-ui{border-left-color:var(--mint)}
+.pending-ui a,.popover .menu-done{color:var(--mint)}
+.tab-indicator,.view-tabs .icon[aria-selected=true]:before{background:var(--mint)}
+.switch{background:#ffffff33}
+.switch[aria-checked=true]{background:var(--mint)}
+.menu-option[aria-checked=true]{background:#8be6d814}
+.popover .menu-note,.menu-option .option-description{color:var(--muted)}
+.pi-pet{color:var(--mint)}
+.error-line{color:var(--pink-soft)}
+
+/* Diffs */
+.diff-content .added,.code .add{color:var(--mint)}
+.diff-content .removed,.code .del{color:var(--pink-soft)}
+
+::selection{background:#e0fd2c55;color:#fff}
+::-webkit-scrollbar-thumb{background:#8be6d840}
